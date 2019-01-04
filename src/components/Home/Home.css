@@ -11,6 +11,7 @@
     background-color: #396271a8;    
     width: 100%;
     height: 100%;
+    font-family: 'Audiowide', cursive;
 }
 .MF-HmCont .MF-HmCont-Reg article h1
 {
@@ -21,6 +22,7 @@
 {
     font-size: 50px;
     font-weight: bold;
+    
 }
 .MF-HmCont .MF-HmCont-Reg button
 {

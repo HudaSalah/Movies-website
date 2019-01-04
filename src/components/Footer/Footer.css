@@ -1,7 +1,7 @@
 #MF-Footer
 {
     background-image: linear-gradient(to top, #50646b, #093142);
-    height:90vh;
+    height:auto;
 }
 #MF-Footer .respv-all-Dec
 {
@@ -9,6 +9,22 @@
     background-size: cover;
     height: 60vh;
     width: 55%;
+}
+
+@media screen and (max-width:768px)
+{
+    #MF-Footer .respv-all-Dec
+    {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width:425px)
+{
+    #MF-Footer .respv-all-Dec
+    {
+        height: 32vh;
+    }
 }
 
 .MF-Footer-Cont ul

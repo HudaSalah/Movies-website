@@ -1,0 +1,27 @@
+#MF-Footer
+{
+    background-image: linear-gradient(to top, #50646b, #093142);
+    height:90vh;
+}
+#MF-Footer .respv-all-Dec
+{
+    background-image: url("https://secure.static.go.osn.com/images/web-home/2015/11/10/devices.png");
+    background-size: cover;
+    height: 60vh;
+    width: 55%;
+}
+
+.MF-Footer-Cont ul
+{
+ list-style: none; 
+}
+
+.MF-Footer-Cont a
+{
+    color: white;
+}
+
+.MF-Footer-Cont a:hover
+{
+    color: #ee6580;
+}

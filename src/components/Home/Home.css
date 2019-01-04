@@ -1,0 +1,38 @@
+#MF-Home
+{
+    background-image: url("../../assets/collageposters.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.MF-HmCont
+{
+    background-color: #396271a8;    
+    width: 100%;
+    height: 100%;
+}
+.MF-HmCont .MF-HmCont-Reg article h1
+{
+    font-family: 'Kaushan Script',
+    cursive;
+}
+.MF-HmCont .MF-HmCont-Reg article
+{
+    font-size: 50px;
+    font-weight: bold;
+}
+.MF-HmCont .MF-HmCont-Reg button
+{
+    background-color: #ee6580;
+    border: 1px solid #ee6580;
+    color: white;
+    height: 70px;
+    font-size: 40px;
+}
+
+.MF-HmCont .MF-HmCont-Reg button:hover
+{
+    background-color: #f1486a;
+    border-color: #f1486a;
+}

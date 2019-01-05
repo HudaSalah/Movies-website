@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Header from '../Header/Header';
+// import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import SignIn from '../Sign-In/Sign-In';
+// import SignIn from '../Sign-In/Sign-In';
 import SignUp from '../Sign-Up/Sign-Up';
 
 
@@ -12,8 +12,8 @@ class Home extends Component {
       <div className="container-fluid p-0">
 
       {/* el content elly hit8air m3aia b l route b3d kda  */}
-{/* <SignIn/> */}
-<SignUp/>
+ {/* <SignIn/> */}
+ <SignUp/>
       {/* home section */}
       {/*
          <section id="MF-Home">

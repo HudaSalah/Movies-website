@@ -43,3 +43,9 @@
 {
     color: #f1486a
 }
+
+#MF-SignIn .MF-SignIn-Form .emailErr , #MF-SignIn .MF-SignIn-Form .passErr
+{
+ color: #e96680;
+ /* display: none; */
+}

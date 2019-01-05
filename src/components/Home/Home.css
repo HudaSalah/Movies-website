@@ -6,24 +6,32 @@
     height: 100vh;
 }
 
-.MF-HmCont
+#MF-Home .MF-HmCont
 {
     background-color: #396271a8;    
     width: 100%;
     height: 100%;
     font-family: 'Audiowide', cursive;
 }
-.MF-HmCont .MF-HmCont-Reg article h1
+
+#MF-Home .MF-HmCont .navbar-brand
 {
-    font-family: 'Kaushan Script',
-    cursive;
+    padding-left: 7%;
 }
+
 .MF-HmCont .MF-HmCont-Reg article
 {
     font-size: 50px;
     font-weight: bold;
     
 }
+
+.MF-HmCont .MF-HmCont-Reg article h1
+{
+    font-family: 'Kaushan Script',
+    cursive;
+}
+
 .MF-HmCont .MF-HmCont-Reg button
 {
     background-color: #ee6580;
@@ -33,6 +41,13 @@
     font-size: 40px;
 }
 
+@media screen and (max-width:425px)
+{
+    .MF-HmCont .MF-HmCont-Reg article , .MF-HmCont .MF-HmCont-Reg button
+    {
+        font-size: 25px;
+    }
+}
 .MF-HmCont .MF-HmCont-Reg button:hover
 {
     background-color: #f1486a;

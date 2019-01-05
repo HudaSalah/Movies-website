@@ -22,8 +22,6 @@ class SignUp extends Component {
     this.showErrMsg = this.showErrMsg.bind(this);     
   }
 
-  
-
    changeHandler=(e)=>{ 
      this.setState({
        [e.target.name] : e.target.value
@@ -55,7 +53,6 @@ class SignUp extends Component {
 
     // =============>> show error message  
       showErrMsg =(error)=>{
-        debugger
         let emailErr = document.getElementsByClassName("emailErr")[0]; 
         let passErr = document.getElementsByClassName("passErr")[0];   
         

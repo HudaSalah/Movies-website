@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Sign-In.css';
 import Header from '../Header/Header';
 import firebase from '../FireBase/FireBase.js'; // <--- add firebase
+import { Link } from "react-router-dom";
 
  const fireStore = firebase.firestore();
  fireStore.settings({
@@ -19,7 +20,7 @@ class SignIn extends Component {
    
     this.changeHandler = this.changeHandler.bind(this);
     this.submitHandler = this.submitHandler.bind(this); 
-    this.showErrMsg = this.showErrMsg.bind(this);     
+    this.showErrMsg = this.showErrMsg.bind(this);    
   }
 
    changeHandler=(e)=>{ 
@@ -44,6 +45,8 @@ class SignIn extends Component {
           userEmail:'',
           UserPass:''
         });
+        this.props.history.push('/SearchMovie');
+
       }).catch((error)=>{
         this.showErrMsg(error);        
         console.log("there are error here ",error.message);
@@ -97,10 +100,11 @@ class SignIn extends Component {
                  required/>
                 <small className="passErr form-text"></small>
             </div>
-            <button type="submit" className="btn w-100 mt-4">SIGN IN</button>
+            
+               <button type="submit" className="btn w-100 mt-4">SIGN IN</button>
             </form>
             <div className="mt-4 text-white d-flex Reg-Nw">
-                <p className="pr-2">New to MomentoFilm?</p> <a href="../Sign-Up/Sign-Up">Sign up now.</a>
+                <p className="pr-2">New to MomentoFilm?</p><Link to="/SignUp">Sign up now.</Link>
             </div>
           </div>
         </section>

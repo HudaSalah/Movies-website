@@ -80,6 +80,7 @@ class SignIn extends Component {
          PassState ={this.state.UserPass}
          onChangeHandle ={this.changeHandler}
          displayRegNw = "true"
+         BgImg = "MF-SignIn"
          />
     );
   }

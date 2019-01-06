@@ -5,7 +5,7 @@ import './Sign-InUp-view.css';
 
 const SignView =(props) =>{
     return (
-        <section id="MF-Sign">        
+        <section id="MF-Sign" className={props.BgImg}>        
           <Header/>
           <div className="MF-Sign-Form text-white p-3 h-75 mx-auto d-flex flex-column justify-content-center align-items-center">
             <h2 className="py-4">{props.title}</h2>

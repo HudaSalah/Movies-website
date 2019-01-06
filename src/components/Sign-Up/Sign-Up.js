@@ -99,6 +99,7 @@ class SignUp extends Component {
          PassState ={this.state.UserPass}
          onChangeHandle ={this.changeHandler}
          displayRegNw = "false"
+         BgImg = "MF-SignUp"
          />  
     );
   }

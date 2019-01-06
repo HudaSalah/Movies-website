@@ -4,12 +4,22 @@
 }
 
 #MF-Sign
-{
-    background-image: url("../../assets/Aquaman-Movie-Poster-Cropped.png");
-    background-position: center;
+{    
     background-size: cover;
     height: 100vh;
 }
+
+.MF-SignUp
+{
+    background-image: url("../../assets/avatar12.jpg"); 
+    background-position: top; 
+}
+.MF-SignIn
+{
+    background-image: url("../../assets/Aquaman-Movie-Poster-Cropped.png");  
+    background-position: center; 
+}
+
 #MF-Sign .MF-Sign-Form 
 {
     width: 350px;
@@ -44,9 +54,7 @@
     color: #f1486a
 }
 
-#MF-Sign .MF-Sign-Form .emailErr ,
-#MF-Sign .MF-Sign-Form .passErr  ,
-
+.emailErr , .passErr
 {
  color: #e96680;
 }

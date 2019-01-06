@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import './Sign-In.css';
-import Header from '../Header/Header';
 import firebase from '../FireBase/FireBase.js'; // <--- add firebase
-import { Link } from "react-router-dom";
+import SignView from '../SharedSign-InOut/Sign-InUp-view';
 
  const fireStore = firebase.firestore();
  fireStore.settings({
@@ -23,15 +21,15 @@ class SignIn extends Component {
     this.showErrMsg = this.showErrMsg.bind(this);    
   }
 
+ //==============>> to remove err msg when change input val
    changeHandler=(e)=>{ 
      this.setState({
        [e.target.name] : e.target.value
      })
      document.getElementsByClassName("emailErr")[0].innerHTML = ""; 
      document.getElementsByClassName("passErr")[0].innerHTML = "";  
-   }
- 
-    //  to submit form in firebase
+   } 
+ //==============>> to submit form in firebase
    submitHandler=(e)=>{   
     e.preventDefault();
 
@@ -45,7 +43,7 @@ class SignIn extends Component {
           userEmail:'',
           UserPass:''
         });
-        this.props.history.push('/SearchMovie');
+        this.props.history.push('/FavFilms');
 
       }).catch((error)=>{
         this.showErrMsg(error);        
@@ -54,7 +52,9 @@ class SignIn extends Component {
 
     } 
 
-    showErrMsg =(error)=>{
+ 
+ // =============>> show error message
+   showErrMsg =(error)=>{
       let emailErr = document.getElementsByClassName("emailErr")[0]; 
       let passErr = document.getElementsByClassName("passErr")[0];   
       if(error.code === "auth/wrong-password")
@@ -71,43 +71,16 @@ class SignIn extends Component {
       }
     }
 
-  render() {
+  //===============================================================View=======================================  
+    render() {
     return (
-        <section id="MF-SignIn">        
-          <Header/>
-          <div className="MF-SignIn-Form text-white p-3 h-75 mx-auto d-flex flex-column justify-content-center align-items-center">
-          <h2 className="py-4">SIGN IN</h2>
-          <form onSubmit={this.submitHandler}>
-            <div className="form-group">
-            <input type="email" 
-                 className="form-control"
-                 id="InputEmail" aria-describedby="emailHelp" 
-                 placeholder="Enter email"
-                 name="userEmail"
-                 value={this.state.userEmail}
-                 onChange={this.changeHandler}
-                 required/>
-                <small className="emailErr form-text"></small>
-            </div>
-            <div className="form-group">
-            <input type="password"
-                 className="form-control"
-                 id="InputPassword" 
-                 placeholder="Password"
-                 name="UserPass"
-                 value={this.state.UserPass}
-                 onChange={this.changeHandler}
-                 required/>
-                <small className="passErr form-text"></small>
-            </div>
-            
-               <button type="submit" className="btn w-100 mt-4">SIGN IN</button>
-            </form>
-            <div className="mt-4 text-white d-flex Reg-Nw">
-                <p className="pr-2">New to MomentoFilm?</p><Link to="/SignUp">Sign up now.</Link>
-            </div>
-          </div>
-        </section>
+        <SignView title ="SIGN IN"
+         submitHandle ={this.submitHandler} 
+         EmailState ={this.state.userEmail}
+         PassState ={this.state.UserPass}
+         onChangeHandle ={this.changeHandler}
+         displayRegNw = "true"
+         />
     );
   }
 }

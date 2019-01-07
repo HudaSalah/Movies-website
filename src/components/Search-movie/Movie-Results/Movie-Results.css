@@ -39,7 +39,7 @@
 #MF-Movies .MF-Movies-cont .img-wrapper aside
 {
     top: 35%;
-    left: 35%;
+    left: 31%;
     opacity: 0;  
     cursor: pointer;
     transition-duration: 1s; 
@@ -104,6 +104,9 @@
 #MF-Movies .MF-Movies-cont .movie-desc .card-title
 {
     color:  #ee6580;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #MF-Movies .MF-Movies-cont .movie-desc .card-text

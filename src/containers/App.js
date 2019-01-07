@@ -22,7 +22,7 @@ class App extends Component {
       <Route path="/SignIn" component={SignIn} />
       <Route path="/SearchMovie" component={SearchMovie} />
       <Route path="/FavFilms" component={FavFilms} />
-      <Route path="/MovieDetail:id" component={MovieDetails} />
+      <Route path="/MovieDetail/:id" component={MovieDetails} />
       {/* Footer */}
       <Footer/>
       </div>

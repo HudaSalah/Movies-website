@@ -93,7 +93,7 @@ class SearchMovie extends Component {
         {/* ============================= movie results =================================== */}
         {/* condition to see if display section or not in case of there are results or not  */}
         {
-            (this.state.TotalResults)?
+            (this.state.TotalResults > 1)?
             <section id="MF-Movies">
                 <div className="container MF-Movies-cont p-5">
                     <div className="MF-Movies-header position-relative d-flex justify-content-center text-white py-4">

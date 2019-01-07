@@ -1,0 +1,38 @@
+#MF-MovieDetail .navbar-signIn
+{
+    display: none;
+}
+
+#MF-MovieDetail
+{
+    background-color: #0a3243;
+    height: 100vh;
+}
+
+
+#MF-MovieDetail .MF-MDcontent
+{   
+    width: 100%;
+    height: 100%;
+    font-family: 'Audiowide', cursive;
+}
+
+#MF-MovieDetail .MF-MDcontent figure
+{
+    width: 345px;
+    height: 445px;
+}
+#MF-MovieDetail .MF-MDcontent article h4
+{
+ color: #ee6580;
+}
+#MF-MovieDetail .MF-MDcontent article .type
+{
+    color: #7d919f;
+}
+
+.container-border
+{
+    border:2px solid #305867;
+    border-radius: 4px;
+}

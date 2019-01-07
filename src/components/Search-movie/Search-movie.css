@@ -1,0 +1,107 @@
+#MF-SearchHome
+{
+    background-image: url("../../assets/Looper_Movie.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#MF-SearchHome .MF-ShCont
+{
+    background-color: #396271a8;    
+    width: 100%;
+    height: 100%;
+    font-family: 'Audiowide', cursive;
+}
+
+#MF-SearchHome .MF-ShCont .btn-search
+{
+    width: 25px;
+    height: 24px;
+    background-image: url("../../assets/icons/loupe.png");
+    background-size: contain;
+    background-repeat: no-repeat;    
+}
+
+#MF-SearchHome .MF-ShCont .input-group-append .btn
+{
+    border-color: #6c757d;
+    background-color: #345b6b94;
+    transition-duration: .5s;
+    width: 50px;
+    height: 38px;
+}
+
+#MF-SearchHome .MF-ShCont .input-group-append .btn:hover
+{
+    background-color: #284a5a;
+}
+
+#MF-SearchHome .MF-ShCont .navbar .navbar-signIn
+{
+    display: none;
+}
+
+.MF-ShCont .MF-ShCont-search article
+{
+    font-size: 45px;
+    font-weight: bold;    
+}
+
+.MF-ShCont .MF-ShCont-search article h1
+{
+    font-family: 'Kaushan Script',
+    cursive;
+}
+
+@media screen and (max-width:425px)
+{
+    .MF-ShCont .MF-ShCont-search article
+    {
+        font-size: 25px;
+    }
+}
+
+.MF-ShCont .MF-ShCont-search input
+{
+    color: #284a5a;
+}
+
+.MF-ShCont .MF-ShCont-search .findRes
+{
+    font-size: 15px;
+    font-family: cursive;
+    color: white;
+}
+
+.MF-ShCont .MF-ShCont-search .findRes .arrow-down
+{
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: fit-content;
+    font-size: 25px;
+    font-family: 'Audiowide', cursive;
+}
+
+#noResultFound
+{
+    background-color: #ee6580;
+    font-family:cursive;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+.show
+{
+    opacity: 1;
+    visibility: unset;
+    display: block;
+}
+.hide
+{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+/*================================================== movies ======================================= */

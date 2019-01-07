@@ -7,9 +7,9 @@ import Home from '../components/Home/Home';
 import SignUp from '../components/Sign-Up/Sign-Up';
 import SignIn from '../components/Sign-In/Sign-In';
 import SearchMovie from '../components/Search-movie/Search-movie';
-import MovieResults from '../components/Search-movie/Movie-Results/Movie-Results';
 import FavFilms from '../components/Fav-Films/Fav-Films';
 import Footer from '../components/Footer/Footer';
+import MovieDetails from '../components/MovieDetails/MovieDetails';
 
 
 class App extends Component {
@@ -21,9 +21,8 @@ class App extends Component {
       <Route path="/SignUp" component={SignUp} />
       <Route path="/SignIn" component={SignIn} />
       <Route path="/SearchMovie" component={SearchMovie} />
-      <Route path="/MovieResults" component={MovieResults} />
       <Route path="/FavFilms" component={FavFilms} />
-      
+      <Route path="/MovieDetail:id" component={MovieDetails} />
       {/* Footer */}
       <Footer/>
       </div>

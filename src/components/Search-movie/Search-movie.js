@@ -15,8 +15,6 @@ class SearchMovie extends Component {
             TotalResults :'',
             showDivErrMsg :'hide'
           };
-
-          const BaseImgUrl="";
     }
 
     BaseImgUrl = "http://image.tmdb.org/t/p/w185/";
@@ -37,7 +35,7 @@ class SearchMovie extends Component {
                     TotalResults:result.total_results
                 });
                 console.log(this.state.MoviesResult , result.total_results);
-                if(result.total_results == 0)
+                if(result.total_results === 0)
                 {
                     this.setState({
                         showDivErrMsg:'show'

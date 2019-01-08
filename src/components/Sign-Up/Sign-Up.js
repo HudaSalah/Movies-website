@@ -73,22 +73,6 @@ class SignUp extends Component {
         emailErr.style.display = "block";   
       }
   }
-  
-      //for store data in data base
-        // const docRef = fireStore.doc("Users/userData");
-        // docRef.set({
-        //   Email:this.state.userEmail,
-        //   Password:this.state.UserPass
-        // }).then(function(){
-        //   console.log("data saved!");
-        // }).catch(function(error){
-        //   console.log("there are error here ",error);
-        // });
-
- 
- 
-   
- 
    
    //===============================================================View=======================================   
    render() {  

@@ -12,8 +12,7 @@ class MoviesDetails extends Component {
             isLoaded: false,
             MoviesDetail:{},
             MovieInfo :[{}]
-        };
-        const BaseImgUrl="";        
+        };       
     }
     BaseImgUrl = "http://image.tmdb.org/t/p/w185/";
 
@@ -61,7 +60,7 @@ class MoviesDetails extends Component {
                 <div className="container my-4">
                     <div className="row text-white container-border">
                 {/* movie poster  */}
-                    <div className="col-md-4 my-auto">
+                    <div className="col-md-4 col-sm-12 my-auto">
                         <figure className="figure rounded m-0 p-2">
                            <img src={this.BaseImgUrl + this.state.MoviesDetail.poster_path}
                             alt="movie poster"
@@ -69,7 +68,7 @@ class MoviesDetails extends Component {
                         </figure>
                     </div>
                 {/* movie details */}
-                    <div className="col-md-8 my-auto pt-4">
+                    <div className="col-md-8 col-sm-12 my-auto pt-4">
                         <article>
                             <h4> {this.state.MoviesDetail.title} </h4>
                             {this.state.MovieInfo.map((type,index)=>{

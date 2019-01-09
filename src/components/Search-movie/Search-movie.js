@@ -109,6 +109,8 @@ class SearchMovie extends Component {
                                     MovieInfoM="180min"
                                     MovieVoteCount ={Movie.vote_count}
                                     MovieDesc={Movie.overview} 
+                                    showRemFavBtn = {false}
+                                    RemoveFromDom = {false}
                                     />                            
                                     :null  
                                     )

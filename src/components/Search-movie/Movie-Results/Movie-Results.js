@@ -7,18 +7,19 @@ import firebase from '../../FireBase/FireBase.js'; // <--- add firebase
  //for store data in data base
 const DB = firebase.firestore();
 DB.settings({
-  timestampsInSnapshots: true
+  timestampsInSnapshots: true 
 }); 
 
 
 class MovieResults extends Component{
-  constructor(){
-    super();
-    this.state ={
-      showRemFavBtn : false
-    }
+  constructor(props){
+    super(props);
     this.AddMovieToFav = this.AddMovieToFav.bind(this);
-    this.RmMovieToFav = this.RmMovieToFav.bind(this);
+    this.RemoveFavMovie = this.RemoveFavMovie.bind(this);
+    this.state ={
+      showRemFavBtn : this.props.showRemFavBtn,
+      RemoveFromDom : this.props.RemoveFromDom
+    }    
   }
 
 //add movie to favourit list
@@ -26,36 +27,69 @@ class MovieResults extends Component{
     this.setState({
       showRemFavBtn : true
     });
-    console.log(e.target.closest(".movie"));
-    console.log(document.querySelectorAll('.movie .MVposter'))
+    let element = e.target.closest(".movie");
+  
+    element.classList.add("AddThis");    
+    let IdVal = document.querySelector(".AddThis").getAttribute("id");
+    let PosterImg = document.querySelector(".AddThis .MVposter").getAttribute("src");
+    let MovieName = document.querySelector(".AddThis .card-title").innerHTML;
+    let MovieInfoY = document.querySelector(".AddThis .Year").innerHTML;
+    let MovieInfoM = document.querySelector(".AddThis .Min").innerHTML;
+    let MovieVoteCount = document.querySelector(".AddThis .Vcount").innerHTML;
+    let MovieDesc = document.querySelector(".AddThis .card-text p").innerHTML;
+    element.classList.remove("AddThis");
 
-  //   DB.collection("FavMovie").add({
-  //     Id: "1",
-  //     MoviePoster: "Lovelace",
-  //     MovieName: 1814 ,
-  //     MovieInfo:{
-  //       MovieInfoY:"2019",
-  //       MovieInfoM:"160",
-  //       MovieVoteCount:"12478"
-  //     },
-  //     MovieDesc:"lblblaaaaaaa lololoyyyy",
+    //append movie data for movie id in fire base store
+    DB.collection("FavMovie").doc(IdVal).set({
+      Id: IdVal,
+      MoviePoster: PosterImg,
+      MovieName: MovieName,
+      MovieInfo:{
+        MovieInfoY: MovieInfoY,
+        MovieInfoM: MovieInfoM,
+        MovieVoteCount: MovieVoteCount
+      },
+      MovieDesc: MovieDesc,
 
-  //   })
-  //   .then(function(docRef) {
-  //     console.log("Document written with ID: ", docRef.id);
-  //   })
-  //   .catch(function(error) {
-  //     console.error("Error adding document: ", error);
-  //   });
+    })
+    .then(function() {
+      console.log("Document saved successfully");
+    })
+    .catch(function(error) {
+      console.error("Error adding document: ", error);
+    });
  }
 
 //remove movie from fav list
-RmMovieToFav =() =>{
-  this.setState({
-    showRemFavBtn : false
-  })
-}
-  render(){
+  RemoveFavMovie =(e) =>{
+    this.setState({
+      showRemFavBtn : false
+    })
+
+    let element = e.target.closest(".movie");
+    
+      element.classList.add("RemoveThis");    
+      let IdVal = document.querySelector(".RemoveThis").getAttribute("id");    
+
+      DB.collection("FavMovie").doc(IdVal).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+    element.classList.remove("RemoveThis");
+
+    //check if in fav-films remove from dom
+    if(this.state.RemoveFromDom)
+    {
+      element.parentNode.removeChild(element);
+    }
+
+    
+  }
+
+
+
+render(){
     return ( 
         <div className="col-md-2 col-sm-6 p-0 mb-4 movie" id={this.props.MovieID}>
         {/* movie poster */}
@@ -75,7 +109,9 @@ RmMovieToFav =() =>{
               <div className="card-body">
                   <h6 className="card-title">{this.props.MovieName}</h6>
                   <h6 className="card-subtitle mb-2 text-muted">
-                   <span>{this.props.MovieInfoY} </span> | <span> {this.props.MovieInfoM} </span> | <span>{this.props.MovieVoteCount} </span>
+                      <span className="Year">{this.props.MovieInfoY} </span>
+                    | <span className="Min"> {this.props.MovieInfoM} </span>
+                    | <span className="Vcount">{this.props.MovieVoteCount} </span>
                   </h6>
                   <div className="card-text">
                      <p>{this.props.MovieDesc}</p>
@@ -84,7 +120,7 @@ RmMovieToFav =() =>{
                     (!this.state.showRemFavBtn)?
                     <button className="btn" onClick={this.AddMovieToFav}> + Add Fav</button>
                     :
-                    <button className="btn" onClick={this.RmMovieToFav}> - Remove Fav</button>
+                    <button className="btn" onClick={this.RemoveFavMovie}> - Remove Fav</button>
                   }
                   
               </div>

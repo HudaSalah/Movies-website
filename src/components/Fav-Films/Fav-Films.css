@@ -1,4 +1,17 @@
-.navbar-signIn
+#MF-Movies .navbar-signIn
 {
     display: none;
+}
+
+#MF-Movies .MF-Movies-cont .not-foundImg
+{
+    opacity: 0.3;
+}
+
+@media screen and (max-width:768px)
+{
+    #MF-Movies .MF-Movies-header h1
+    {
+      font-size: 25px;  
+    }    
 }

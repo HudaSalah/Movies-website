@@ -2,6 +2,10 @@
 {
     display: none;
 }
+#MF-Movies .navbar-FavBtn
+{
+    display: none;
+}
 
 #MF-Movies .MF-Movies-cont .not-foundImg
 {

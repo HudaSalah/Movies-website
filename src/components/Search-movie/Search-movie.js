@@ -64,7 +64,7 @@ class SearchMovie extends Component {
     <div>
        <section id="MF-SearchHome">
         <div className="MF-ShCont">            
-          <Header/>
+          <Header goLogHome={false}/>
           <div className="MF-ShCont-search h-75 pt-5 d-flex flex-column justify-content-center align-items-center">
             <article className="text-center text-white py-3">
               <h1>Momento Film</h1>
@@ -81,7 +81,7 @@ class SearchMovie extends Component {
                 </div>
             </div>
             <div className="findRes pt-2">
-              <p>You will find Result below if it's exist 'just scroll down'</p>
+              <p className="text-center">You will find Result below if it's exist 'just scroll down'</p>
               <p className="arrow-down mx-auto">»</p>
             </div>
           </div>

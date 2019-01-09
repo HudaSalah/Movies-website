@@ -82,16 +82,14 @@ class MovieResults extends Component{
     if(this.state.RemoveFromDom)
     {
       element.parentNode.removeChild(element);
-    }
-
-    
+    } 
   }
 
 
 
 render(){
     return ( 
-        <div className="col-md-2 col-sm-6 p-0 mb-4 movie" id={this.props.MovieID}>
+        <div className="col-lg-2 col-md-4 col-sm-6 p-0 mb-4 movie" id={this.props.MovieID}>
         {/* movie poster */}
           <div className="img-wrapper position-relative">
             <figure className="figure m-0">
@@ -128,10 +126,6 @@ render(){
         </div>
       );
   }
-      
-    
-
 }
-
 
 export default MovieResults;

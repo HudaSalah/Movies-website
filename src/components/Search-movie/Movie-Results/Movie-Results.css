@@ -31,6 +31,15 @@
  width: 172px;
 }
 
+@media screen and (max-width:1024px) and (min-width:769px)
+{
+    #MF-Movies .MF-Movies-cont .img-wrapper figure
+    {
+        height: 202px;
+        width: 145px;
+    }
+}
+
 
 #MF-Movies .MF-Movies-cont .img-wrapper
 {

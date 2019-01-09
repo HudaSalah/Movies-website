@@ -56,7 +56,7 @@ class MoviesDetails extends Component {
          return(
         <section id="MF-MovieDetail">
             <div className="MF-MDcontent">            
-            <Header/>
+            <Header goLogHome={false}/>
                 <div className="container my-4">
                     <div className="row text-white container-border">
                 {/* movie poster  */}

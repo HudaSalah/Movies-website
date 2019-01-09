@@ -9,7 +9,7 @@ class Home extends Component {
     return (
          <section id="MF-Home">
           <div className="MF-HmCont">            
-            <Header/>
+            <Header  goLogHome={true}/>
             <div className="MF-HmCont-Reg h-75 d-flex flex-column justify-content-center align-items-center">
               <article className="text-center text-white py-3">
                 <h1>See what’s next</h1>

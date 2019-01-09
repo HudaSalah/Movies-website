@@ -1,3 +1,8 @@
+#MF-Home .navbar-FavBtn, #MF-Home .navbar-LogOut
+{
+    display: none;
+}
+
 #MF-Home
 {
     background-image: url("../../assets/collageposters.jpg");

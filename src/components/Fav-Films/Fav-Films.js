@@ -60,7 +60,7 @@ class FavFilms extends Component {
     render() {
       return ( 
         <section id="MF-Movies">
-         <Header/>
+         <Header goLogHome={false}/>
         <div className="container MF-Movies-cont p-5">
             <div className="MF-Movies-header position-relative d-flex justify-content-center text-white py-4">
             <h1> Favourit Movies </h1>
@@ -90,7 +90,7 @@ class FavFilms extends Component {
                 :
                 <div className="row align-items-center flex-column mb-5 pt-5 text-white">
                 <div><img src= {MovieImg} className="not-foundImg pb-3" alt="not found movie"/></div>
-                  <p>No Favourit Movies added yet , go to <Link to="/">Home</Link> and add what you love </p>
+                  <p className="text-center">No Favourit Movies added yet , go to <Link to="/SearchMovie">Home</Link> and add what you love </p>
                 </div>
             }
                

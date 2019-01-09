@@ -43,7 +43,7 @@ class SignIn extends Component {
           userEmail:'',
           UserPass:''
         });
-        this.props.history.push('/FavFilms');
+        this.props.history.push('/SearchMovie');
 
       }).catch((error)=>{
         this.showErrMsg(error);        

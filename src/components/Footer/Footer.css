@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (max-width:425px)
+@media screen and (max-width:425px) and (min-width:320px)
 {
     #MF-Footer .respv-all-Dec
     {
@@ -27,6 +27,13 @@
     }
 }
 
+@media screen and (max-width: 320px)
+{
+    #MF-Footer .respv-all-Dec 
+    {
+        height: 25vh;
+    }
+}
 .MF-Footer-Cont ul
 {
  list-style: none; 

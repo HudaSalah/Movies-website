@@ -1,7 +1,8 @@
-#MF-Sign .navbar-signIn
+#MF-Sign .navbar-signIn ,#MF-Sign .navbar-FavBtn ,#MF-Sign .navbar-LogOut
 {
     display: none;
 }
+
 
 #MF-Sign
 {    

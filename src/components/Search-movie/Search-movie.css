@@ -1,7 +1,7 @@
 #MF-SearchHome
 {
     background-image: url("../../assets/Looper_Movie.jpg");
-    background-position: center;
+    background-position: top;
     background-size: cover;
     height: 100vh;
 }
@@ -54,7 +54,7 @@
     cursive;
 }
 
-@media screen and (max-width:425px)
+@media screen and (max-width:768px)
 {
     .MF-ShCont .MF-ShCont-search article
     {
@@ -105,3 +105,26 @@
 }
 
 /*================================================== movies ======================================= */
+@media screen and (max-width:425px) and (min-width:376px)
+{
+    .movie
+    {
+      width:50% !important;
+    }
+}
+
+@media screen and (max-width:375px) and (min-width:320px)
+{
+   .movie figure
+    {
+        margin: 0px 22% !important;     
+    }
+}
+
+@media screen and (max-width:320px)
+{
+    .movie figure
+    {
+        margin: 0px 15% !important;     
+    }
+}

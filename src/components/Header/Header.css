@@ -2,13 +2,13 @@
     background-color: #396271c7;
 }
 
-.navbar button{
+.navbar .navbar-signIn button{
     background-color: #ee6580;
     border: 1px solid #ee6580;
     color: white;
 }
 
-.navbar button:hover
+.navbar .navbar-signIn button:hover
 {
     color: #fdfdfd;
     text-decoration: none;
@@ -16,8 +16,11 @@
     border-color: #f1486a;
 }
 .navbar-brand img{
-    /* background-image: url("../../assets/words_white.png"); */
-    /* background-size: cover; */
-    /* width: 200px; */
     height: 75px;    
+}
+
+.navbar .navbar-FavBtn img ,.navbar .navbar-LogOut img
+{
+  width: 30px;
+  height: 30px;
 }

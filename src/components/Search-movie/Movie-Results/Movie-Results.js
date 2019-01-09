@@ -16,6 +16,7 @@ class MovieResults extends Component{
     super(props);
     this.AddMovieToFav = this.AddMovieToFav.bind(this);
     this.RemoveFavMovie = this.RemoveFavMovie.bind(this);
+    this.ShowDesc = this.ShowDesc.bind(this);
     this.state ={
       showRemFavBtn : this.props.showRemFavBtn,
       RemoveFromDom : this.props.RemoveFromDom
@@ -66,32 +67,51 @@ class MovieResults extends Component{
       showRemFavBtn : false
     })
 
-    let element = e.target.closest(".movie");
-    
-      element.classList.add("RemoveThis");    
-      let IdVal = document.querySelector(".RemoveThis").getAttribute("id");    
+    let element = e.target.closest(".movie");    
+    element.classList.add("RemoveThis");    
+    let IdVal = document.querySelector(".RemoveThis").getAttribute("id"); 
 
-      DB.collection("FavMovie").doc(IdVal).delete().then(function() {
-        console.log("Document successfully deleted!");
-    }).catch(function(error) {
-        console.error("Error removing document: ", error);
-    });
+    DB.collection("FavMovie").doc(IdVal).delete().then(function() {
+      console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
     element.classList.remove("RemoveThis");
 
     //check if in fav-films remove from dom
     if(this.state.RemoveFromDom)
     {
       element.parentNode.removeChild(element);
+      this.props.UpdateRender();
     } 
   }
 
 
+  //show movie description
+  ShowDesc = (e) =>{
+    debugger
+    let poster = e.target.closest(".movie");
+    let screenWidth = window.innerWidth;
+    let GetXcoordinate = screenWidth - poster.getBoundingClientRect().x; 
+    console.log(GetXcoordinate)
+    
+    // ---------- 143 --------- 323 ------- 501 ----- 680 ----- 859 ----- 1038
+    if(GetXcoordinate < screenWidth/2)
+    {
+      poster.classList.add("showDesc");
+      document.querySelector(".showDesc .movie-desc").style.left = "unset";
+      document.querySelector(".showDesc .movie-desc").style.right = "82%";
+      document.querySelector(".showDesc .card-body").classList.add("card-body-after-change");
+      poster.classList.remove("showDesc");
+    }
+  }
+
 
 render(){
     return ( 
-        <div className="col-lg-2 col-md-4 col-sm-6 p-0 mb-4 movie" id={this.props.MovieID}>
+        <div className="col-lg-2 col-md-4 col-sm-6 p-0 mb-4 movie" id = {this.props.MovieID}>
         {/* movie poster */}
-          <div className="img-wrapper position-relative">
+          <div className="img-wrapper position-relative" onMouseOver={this.ShowDesc}>
             <figure className="figure m-0">
              <img src= {this.props.MovieImg} className="MVposter rounded w-100 h-100" alt="movie poster"/>
             </figure>

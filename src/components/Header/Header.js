@@ -3,7 +3,7 @@ import firebase from '../FireBase/FireBase.js'; // <--- add firebase
 import './Header.css';
 import Logo_img from '../../assets/words_white.png';
 import Fav_img from '../../assets/icons/favorite.png';
-import LogOut_img from '../../assets/icons/logout.png';
+// import LogOut_img from '../../assets/icons/logout.png';
 import { Link } from "react-router-dom";
 
 const fireStore = firebase.firestore();

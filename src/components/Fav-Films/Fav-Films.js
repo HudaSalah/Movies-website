@@ -26,6 +26,7 @@ class FavFilms extends Component {
         }
 
         this.updateStateHandler = this.updateStateHandler.bind(this);
+        this.CheckIfFavExist = this.CheckIfFavExist.bind(this);
     }
     FavMoviesArr =[];
 
@@ -40,7 +41,7 @@ class FavFilms extends Component {
                console.log(this.FavMoviesArr)         
             });
 
-            this.updateStateHandler();
+        this.updateStateHandler();
         });
     }
 
@@ -49,10 +50,22 @@ class FavFilms extends Component {
         if(this.FavMoviesArr.length>0)
         {            
             this.setState({
-            existFav:'true',
-                FavMovies : [...this.FavMoviesArr]
+            existFav:true,
+            FavMovies : [...this.FavMoviesArr]
             });
             console.log(this.state.FavMovies) 
+        }
+    }
+
+
+    //when remove all fav list appen second div
+    CheckIfFavExist = () =>
+    {
+        if(this.state.FavMovies.length === 0)
+        {
+            this.setState({
+            existFav:false
+            });
         }
     }
   
@@ -64,27 +77,26 @@ class FavFilms extends Component {
         <div className="container MF-Movies-cont p-5">
             <div className="MF-Movies-header position-relative d-flex justify-content-center text-white py-4">
             <h1> Favourit Movies </h1>
-            </div>
-            
-
+            </div>          
             { 
                 (this.state.existFav)?
                 <div className="row justify-content-start mb-5 pt-5">
                     { this.state.FavMovies.map((Movie,index)=>{             
-                                        return (
-                                                <MovieResults MovieImg={Movie.docData.MoviePoster}
-                                                key={Movie.docId}
-                                                MovieID ={Movie.docData.Id}
-                                                MovieName={Movie.docData.MovieName}
-                                                MovieInfoY={Movie.docData.MovieInfo.MovieInfoY}
-                                                MovieInfoM={Movie.docData.MovieInfo.MovieInfoM}
-                                                MovieVoteCount ={Movie.docData.MovieInfo.MovieVoteCount}
-                                                MovieDesc={Movie.docData.MovieDesc}
-                                                showRemFavBtn = {true} 
-                                                RemoveFromDom = {true}
-                                                /> 
-                                            )
-                                    })
+                        return (
+                                <MovieResults MovieImg={Movie.docData.MoviePoster}
+                                key={Movie.docId}
+                                MovieID ={Movie.docData.Id}
+                                MovieName={Movie.docData.MovieName}
+                                MovieInfoY={Movie.docData.MovieInfo.MovieInfoY}
+                                MovieInfoM={Movie.docData.MovieInfo.MovieInfoM}
+                                MovieVoteCount ={Movie.docData.MovieInfo.MovieVoteCount}
+                                MovieDesc={Movie.docData.MovieDesc}
+                                showRemFavBtn = {true} 
+                                RemoveFromDom = {true}
+                                UpdateRender ={this.CheckIfFavExist}
+                                /> 
+                        )
+                    })
                     }
                 </div>
                 :
@@ -92,9 +104,7 @@ class FavFilms extends Component {
                 <div><img src= {MovieImg} className="not-foundImg pb-3" alt="not found movie"/></div>
                   <p className="text-center">No Favourit Movies added yet , go to <Link to="/SearchMovie">Home</Link> and add what you love </p>
                 </div>
-            }
-               
-            
+            }              
         </div>
     </section>
       );

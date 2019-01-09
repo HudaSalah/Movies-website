@@ -89,7 +89,6 @@ class MovieResults extends Component{
 
   //show movie description
   ShowDesc = (e) =>{
-    debugger
     let poster = e.target.closest(".movie");
     let screenWidth = window.innerWidth;
     let GetXcoordinate = screenWidth - poster.getBoundingClientRect().x; 
